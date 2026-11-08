@@ -1,0 +1,12 @@
+---
+description: Normes base del repo de pràctiques ACME Portal
+alwaysApply: true
+---
+
+# ACME Portal — normes d'aula
+
+- Stack: Node.js + Express. No afegeixis frameworks nous sense que ho demanin.
+- No generis README extres ni documentació no demanada.
+- No escriguis secrets reals a fitxers. Usa `.env.example` sense valors sensibles.
+- Els tests es fan amb Jest (`npm test`).
+- Respostes i comentaris de PR en català, llevat que el docent indiqui el contrari.
