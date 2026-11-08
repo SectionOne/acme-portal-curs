@@ -1,21 +1,18 @@
 # Autoavaluació (alumne)
 
-El curs s’avalua així:
-
-1. **CI (automàtic):** a la PR, el check `test` ha d’estar verd.  
-2. **Tu:** marques la checklist de la unitat abans de fer merge al teu `main`.
-
-No cal enviar res al professor perquè “et corrija” la PR.
+1. **CI:** a la PR, el check `test` ha d’estar verd.  
+2. **Checklist:** marca els ítems de la unitat abans del merge al teu `main`.
 
 ---
 
 ## Checklist genèrica (cada PR)
 
-- [ ] La PR va al **meu** fork (`base` = el meu `main`)  
+- [ ] La branca té el **nom fix** (`unitat-01` … `unitat-10` / `unitat-02a` / `unitat-02b`)  
+- [ ] La PR va al **meu** fork (`base` = el meu `main`, `compare` = aquesta branca)  
 - [ ] CI `test` **verda**  
 - [ ] No he pujat `.env`  
 - [ ] He provat al navegador el que demana la unitat  
-- [ ] He omplert la plantilla de la PR  
+- [ ] He omplert la plantilla de la PR (casella de la unitat correcta)  
 
 ---
 

@@ -1,14 +1,17 @@
 # Mapa labs ↔ repositori
 
-| Unitat | Què fa l’alumne sobre `acme-portal` |
-|--------|-------------------------------------|
-| 01 Modes | Ask sobre `getClientsSlow`; Plan de millora; Agent canvia a ràpid; Debug del contacte `urgent` |
-| 02 Cloud | Sense cloud: simular 2 branques locals per B2 i B4; amb cloud: mateixos tickets |
-| 03 Rules | Crear rule anti-log de secrets; treure log de `auth.js`; skill “nou endpoint” |
-| 04 MCP | Si no hi ha MCP: practicar prompt “no inventis dades”; opcional Browser MCP sobre localhost |
-| 05 Hooks | Deny-list paper + comprovar que `.env` no es puja; discutir sandbox |
-| 06 Bugbot | Sense Bugbot: checklist humana tipus BUGBOT.md sobre un diff d’invitacions |
-| 07 Browser | Reproduir checkout mòbil a localhost; fix CSS; revalidar |
-| 08 Canvas | Demanar resum d’incident fictici a partir dels bugs del repo |
-| 09 SDK | Dissenyar bot que comenti PRs que toquin `src/auth.js` |
-| 10 Capstone | Triar B3 (invitacions) o embut complet B1+B2+B4 |
+| Unitat | Branca obligatòria | Què fa l’alumne sobre `acme-portal` |
+|--------|--------------------|-------------------------------------|
+| 01 Modes | `unitat-01` | Ask sobre `getClientsSlow`; Plan; Agent; Debug contacte `urgent` |
+| 02 Cloud A | `unitat-02a` | Fix contacte `urgent` (branca aïllada) |
+| 02 Cloud B | `unitat-02b` | Fix checkout CSS (branca aïllada) |
+| 03 Rules | `unitat-03` | Rule anti-log secrets; treure log `auth.js`; skill endpoint |
+| 04 MCP | `unitat-04` | Prompt “no inventis dades”; opcional Browser MCP |
+| 05 Hooks | `unitat-05` | Deny-list; `.env` no es puja; sandbox |
+| 06 Bugbot | `unitat-06` | Checklist `BUGBOT.md` sobre diff d’invitacions |
+| 07 Browser | `unitat-07` | Checkout mòbil; fix CSS; revalidar |
+| 08 Canvas | `unitat-08` | Resum d’incident |
+| 09 SDK | `unitat-09` | Disseny bot que comenti PRs que toquin `auth.js` |
+| 10 Capstone | `unitat-10` | Escenari A–D tancat amb PR |
+
+Noms: `docs/branques-obligatories.md`. La CI rebutja branques fora d’aquesta llista.

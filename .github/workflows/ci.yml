@@ -11,6 +11,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Require fixed branch name on PR
+        if: github.event_name == 'pull_request'
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          ALLOWED='^(unitat-01|unitat-02a|unitat-02b|unitat-03|unitat-04|unitat-05|unitat-06|unitat-07|unitat-08|unitat-09|unitat-10)$'
+          echo "Branca de la PR: ${HEAD_REF}"
+          if ! echo "${HEAD_REF}" | grep -Eq "${ALLOWED}"; then
+            echo "Nom de branca no vàlid: '${HEAD_REF}'"
+            echo "Heu d'usar exactament un d'aquests: unitat-01, unitat-02a, unitat-02b, unitat-03 … unitat-10"
+            echo "Vegeu docs/branques-obligatories.md"
+            exit 1
+          fi
+          echo "OK: branca obligatòria reconeguda."
 
       - name: Setup Node
         uses: actions/setup-node@v4
