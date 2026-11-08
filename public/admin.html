@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin clients — ACME</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <strong>ACME Admin</strong>
+    <nav>
+      <a href="/">Inici</a>
+      <a href="/contact.html">Contacte</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <h1>Clients</h1>
+    <p>Aquest panell triga ~1,2 s perquè l’API fa tres esperes seguides (lab de modes).</p>
+    <label for="token">Token</label>
+    <input id="token" value="demo-token-canvia-ho" />
+    <button id="loadBtn" type="button">Carregar clients</button>
+    <p id="status"></p>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Nom</th><th>Empresa</th><th>Owner</th><th>Tags</th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+  <script src="/admin.js"></script>
+</body>
+</html>

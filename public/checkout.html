@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — ACME</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <strong>Checkout</strong>
+    <nav><a href="/">Inici</a></nav>
+  </header>
+  <main class="wrap checkout-page">
+    <h1>Resum de comanda</h1>
+    <div class="card">
+      <p>Pla Pro — 29 € / mes</p>
+      <p>IVA inclòs · renovació mensual</p>
+      <button class="cta-pay" id="payBtn" type="button">Continuar al pagament</button>
+      <p id="payStatus"></p>
+    </div>
+  </main>
+  <div class="cookie-banner" id="cookies">
+    Fem servir cookies tècniques.
+    <button type="button" id="acceptCookies" style="margin-top:.5rem;background:#fff;color:#111;">Acceptar</button>
+  </div>
+  <script>
+    document.getElementById('payBtn').addEventListener('click', () => {
+      document.getElementById('payStatus').textContent = 'OK: has pogut clicar el CTA';
+      document.getElementById('payStatus').className = 'msg-ok';
+    });
+    document.getElementById('acceptCookies').addEventListener('click', () => {
+      document.getElementById('cookies').style.display = 'none';
+    });
+  </script>
+</body>
+</html>

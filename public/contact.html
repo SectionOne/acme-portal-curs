@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacte — ACME</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <strong>Contacte</strong>
+    <nav><a href="/">Inici</a></nav>
+  </header>
+  <main class="wrap card">
+    <h1>Formulari de contacte</h1>
+    <p>Prova d’enviar un missatge normal i un altre que contingui la paraula <em>urgent</em>.</p>
+    <form id="form">
+      <label for="name">Nom</label>
+      <input id="name" name="name" required value="Alumne Demo" />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required value="alumne@acme.test" />
+      <label for="message">Missatge</label>
+      <textarea id="message" name="message" rows="4" required>Hola, tinc un dubte del producte.</textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="status"></p>
+  </main>
+  <script src="/contact.js"></script>
+</body>
+</html>

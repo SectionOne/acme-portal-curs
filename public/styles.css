@@ -1,0 +1,70 @@
+:root {
+  --bg: #f5f7fa;
+  --ink: #1b2430;
+  --brand: #1e3a5f;
+  --line: #d5dde8;
+  --danger: #b42318;
+  --ok: #067647;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: .9rem 1.2rem;
+  background: var(--brand);
+  color: #fff;
+}
+.top a { color: #fff; margin-left: .8rem; }
+.wrap { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; }
+.hint { background: #fff; border: 1px solid var(--line); padding: .75rem 1rem; border-radius: 8px; }
+label { display: block; margin: .6rem 0 .25rem; font-weight: 600; }
+input, textarea, button, select {
+  width: 100%;
+  padding: .65rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+}
+button {
+  margin-top: 1rem;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:disabled { opacity: .6; cursor: wait; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { border: 1px solid var(--line); padding: .55rem .7rem; text-align: left; }
+.msg-error { color: var(--danger); }
+.msg-ok { color: var(--ok); }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1rem; }
+
+/* --- Checkout: banner de cookies tapa el CTA a mòbil (BUG INTENCIONAT) --- */
+.checkout-page { position: relative; min-height: 80vh; padding-bottom: 120px; }
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: #111827;
+  color: #fff;
+  padding: 1rem;
+}
+.cta-pay {
+  position: relative;
+  z-index: 1; /* més baix que el banner → a mòbil sembla clicable però queda tapat */
+  margin-top: 2rem;
+}
+@media (min-width: 900px) {
+  .cookie-banner { max-width: 420px; left: auto; right: 1rem; bottom: 1rem; border-radius: 10px; }
+}
