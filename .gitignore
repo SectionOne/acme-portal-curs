@@ -1,0 +1,8 @@
+node_modules/
+.env
+coverage/
+*.log
+.DS_Store
+
+# Només professorat (no pujar a la plantilla pública)
+docs/bugs-coneguts.md
