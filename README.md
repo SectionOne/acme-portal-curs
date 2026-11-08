@@ -54,7 +54,7 @@ Portal intern fictici amb errors preparats:
 - checkout — bug de CSS a mòbil  
 - auth simple per token  
 
-## 4) Entregar feina (branques + PR)
+## 4) Entregar feina (al teu fork — autoavaluació)
 
 ```bash
 git checkout -b fix/unitat-01-modes
@@ -64,7 +64,9 @@ git commit -m "fix: unitat 01"
 git push -u origin HEAD
 ```
 
-Després obriu **Pull Request** al GitHub (plantilla inclosa). La CI executa `npm test` automàticament.
+Obre la **Pull Request cap al teu `main`** (plantilla inclosa).  
+La CI executa `npm test`. Completa `docs/autoavaluacio.md` i mergeja tu mateix.  
+El professor no avalua les teves PRs.
 
 ## 5) Estructura
 

@@ -11,8 +11,14 @@
 
 ## Com ho he provat
 
-- [ ] `npm test`
-- [ ] Prova al navegador (explica quina):
+- [ ] `npm test` (local)
+- [ ] Prova al navegador:
+
+## Autoavaluació
+
+- [ ] CI `test` verda (quan acabi Actions)
+- [ ] He revisat `docs/autoavaluacio.md` (checklist de la unitat)
+- [ ] No he pujat `.env`
 
 ## Fora d’abast
 
