@@ -1,37 +1,66 @@
-# Com treballar amb el repositori d’aula (alumnes)
+# Guia GitHub + Cursor
 
-El professor us donarà una **URL** del tipus:
+Plantilla: **https://github.com/SectionOne/acme-portal-curs**
 
-```text
-https://github.com/SectionOne/acme-portal-curs
-```
+Setup **una sola vegada** abans de la Unitat 01. Les unitats no tornen a explicar Node ni el clone.
 
-Aquesta és la plantilla oficial del curs. Al fer fork, la URL passarà a ser la del **vostre** usuari.
+Versió amb captures: `alumne/guia-github-pas-a-pas.md` (Word).  
+Branques: **[`docs/branques-obligatories.md`](branques-obligatories.md)** (noms fixos; la CI els comprova).
 
-## Opció recomanada: Fork + clone
+---
 
-### 1) Fork (còpia al teu GitHub)
+## Flux
 
-1. Obre la URL del repo del professor al navegador (has d’estar connectat a GitHub).  
-2. Clica el botó **Fork** (dalt a la dreta).  
-3. Confirma el fork al **teu** compte.  
-4. Ara tens una URL pròpia, per exemple:  
-   `https://github.com/EL_TEU_USUARI/acme-portal-curs`
+**còpia teva → branca amb nom fix → canvis amb Cursor → commit → push → Pull Request al teu `main` → Actions (`npm test` + nom de branca) → `docs/autoavaluacio.md` → merge.**
 
-### 2) Clone a l’ordinador
+El professor no puntua les PR.
 
-Obre un terminal (PowerShell o el de Cursor) i executa (canvia la URL per la del **teu** fork):
+| Paraula | Significat |
+|---------|------------|
+| Fork / plantilla | La teva còpia a GitHub |
+| Clone | Baixar-la al PC (des de Cursor) |
+| Branca | Línia de treball; **nom obligatori** `unitat-01` … `unitat-10` |
+| Commit | Desa un punt amb missatge |
+| Push | Puja la branca a GitHub |
+| Pull Request | Demana fusionar la branca → `main` |
+| Actions / CI | Executa `npm test` i valida el nom de branca |
+| Merge | Acceptar la PR |
+
+---
+
+## Node.js
+
+1. https://nodejs.org → **LTS**.  
+2. Tanca i obre Cursor.  
+3. Terminal:
 
 ```bash
-cd Documents
-git clone https://github.com/EL_TEU_USUARI/acme-portal-curs.git
-cd acme-portal-curs
+node -v
+npm -v
+git --version
 ```
 
-### 3) Obrir a Cursor i arrencar
+---
 
-1. Cursor → **File → Open Folder…** → tria `acme-portal-curs`.  
-2. Al terminal de Cursor:
+## 1) Còpia a GitHub
+
+1. Obre la plantilla amb la teva sessió.  
+2. **Use this template** o **Fork**.  
+3. URL: `https://github.com/EL_TEU_USUARI/acme-portal-curs`.
+
+---
+
+## 2) Clonar amb Cursor
+
+1. **File → New Window**.  
+2. **Clone Repository** (o Ctrl+Shift+P → `Git: Clone`).  
+3. Enganxa `https://github.com/EL_TEU_USUARI/acme-portal-curs.git` → **Open**.
+
+Alternativa: `git clone …` i **File → Open Folder…**.
+
+---
+
+## 3) Arrencar
 
 ```bash
 copy .env.example .env
@@ -40,42 +69,64 @@ npm test
 npm start
 ```
 
-3. Navegador: http://localhost:3000
+http://localhost:3000 — no pujis `.env`.
 
-**Important:** el fitxer `.env` no s’ha de pujar mai a GitHub (ja està al `.gitignore`).
+---
 
-## Opció alternativa: “Use this template”
+## 4) Cicle d’una unitat
 
-Si el professor ha marcat el repo com a **Template**:
+### Branques obligatòries
 
-1. Obre la URL del repo.  
-2. Clica **Use this template** → **Create a new repository**.  
-3. Posar-li un nom (p. ex. `acme-portal-curs-nomcognom`).  
-4. Després `git clone` de **la teva** URL nova (igual que amunt).
+| Entrega | Branca |
+|---------|--------|
+| 01 | `unitat-01` |
+| 02 A (contacte) | `unitat-02a` |
+| 02 B (checkout) | `unitat-02b` |
+| 03 … 10 | `unitat-03` … `unitat-10` |
 
-## Com entregar amb Pull Request (des de la unitat 01 / 02)
+No inventeu noms (`fix/...`, cognoms, dates…).
 
-1. Crea una branca (exemple unitat 01):
-
-```bash
-git checkout -b fix/unitat-01-modes
-```
-
-2. Fes els canvis amb Cursor, després:
+### Exemple Unitat 01
 
 ```bash
-git add .
+git checkout main
+git pull
+git checkout -b unitat-01
+# ... feina ...
 git status
-git commit -m "fix: unitat 01 modes (clients rapids + contacte urgent)"
-git push -u origin fix/unitat-01-modes
+git add src/app.js tests/app.test.js
+git commit -m "fix: unitat 01 modes"
+git push -u origin unitat-01
 ```
 
-3. Al GitHub (el teu fork), clica **Compare & pull request**.  
-4. Omple la plantilla de la PR.  
-5. Si el professor ho indica: obre la PR **cap al teu fork** (base = `main` del teu repo) perquè la pugui revisar, **o** cap al repo d’entregues del centre (us ho diran a classe).
+Si surt `.env` a `git status`, no el facis `add`.
 
-La CI (`npm test`) s’executa sola a la PR. La marca verda vol dir que els tests passen; **no** és la nota final.
+### Pull Request
 
-## Si Git falla a classe
+1. Al teu repo: **Compare & pull request**.  
+2. **base** = `main` · **compare** = `unitat-01` (o el nom fix de la unitat).  
+3. Marqueu la casella corresponent a la plantilla → **Create pull request**.
 
-Digues-ho al formador. Hi ha una via de contingència amb còpia de carpetes locals (unitat 02), però el camí normal del curs és **fork + clone + branques + PR**.
+### Actions
+
+Job **`test`**: `npm test` + nom de branca vàlid + sense `.env`.  
+Vermell → corregeix, `commit` + `push` a la **mateixa** branca.
+
+### Merge
+
+1. Completa `docs/autoavaluacio.md`.  
+2. **Merge pull request**.  
+3. `git checkout main` && `git pull`.  
+4. Unitat següent = branca amb el **seu** nom fix.
+
+---
+
+## Errors freqüents
+
+| Problema | Solució |
+|----------|---------|
+| `npm` desconegut | Node LTS + reiniciar Cursor |
+| permission denied a SectionOne | Clonar el teu fork/plantilla |
+| PR cap a SectionOne | Crear-la des del teu repo |
+| Actions i `.env` | `git rm --cached .env` + commit + push |
+| CI: branca no vàlida | Usar exactament el nom de `docs/branques-obligatories.md` |
