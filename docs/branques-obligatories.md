@@ -35,3 +35,5 @@ Substituïu `unitat-XX` pel valor de la taula (per a la 02 useu `unitat-02a` o `
 ## CI
 
 A les PR, Actions comprova que el nom de la branca sigui un dels de la taula. Si no coincideix, el check falla.
+
+(Les branques `docs/...` i `chore/...` només serveixen per mantenir la plantilla; els alumnes no les useu.)
