@@ -80,7 +80,7 @@ http://localhost:3000 — no pujis `.env`.
 | Entrega | Branca |
 |---------|--------|
 | 01 | `unitat-01` |
-| 02 A (contacte) | `unitat-02a` |
+| 02 A (invitacions) | `unitat-02a` |
 | 02 B (checkout) | `unitat-02b` |
 | 03 … 10 | `unitat-03` … `unitat-10` |
 

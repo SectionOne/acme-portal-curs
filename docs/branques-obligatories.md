@@ -5,7 +5,7 @@ Cada entrega usa **exactament** aquest nom de branca. No afegiu el vostre nom, d
 | Entrega | Branca (copieu tal qual) | Commit de push (exemple) |
 |---------|--------------------------|--------------------------|
 | Unitat 01 | `unitat-01` | `git push -u origin unitat-01` |
-| Unitat 02 — ticket A (contacte) | `unitat-02a` | `git push -u origin unitat-02a` |
+| Unitat 02 — ticket A (invitacions) | `unitat-02a` | `git push -u origin unitat-02a` |
 | Unitat 02 — ticket B (checkout) | `unitat-02b` | `git push -u origin unitat-02b` |
 | Unitat 03 | `unitat-03` | `git push -u origin unitat-03` |
 | Unitat 04 | `unitat-04` | `git push -u origin unitat-04` |

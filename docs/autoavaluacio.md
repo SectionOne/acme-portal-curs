@@ -26,7 +26,7 @@
 
 ## Unitat 02 — Paral·lel / Cloud (simulació)
 
-- [ ] Tinc **dues** PRs (o dues branques mergejades): contacte + checkout  
+- [ ] Tinc **dues** PRs (o dues branques mergejades): invitacions + checkout  
 - [ ] Cada PR/branca només tocava els fitxers del seu ticket  
 - [ ] Després del merge a `main`, els **dos** fluxos funcionen  
 - [ ] Entenc que Agent+branca+PR = paper del Cloud Agent  

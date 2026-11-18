@@ -1,7 +1,7 @@
 ## Unitat (marqueu-ne UNA; ha de coincidir amb el nom de la branca)
 
 - [ ] `unitat-01` — Modes
-- [ ] `unitat-02a` — Contacte `urgent`
+- [ ] `unitat-02a` — Invitacions (cursa)
 - [ ] `unitat-02b` — Checkout CSS
 - [ ] `unitat-03` — Rules / Skills
 - [ ] `unitat-04` — MCP
