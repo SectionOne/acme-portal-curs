@@ -49,7 +49,7 @@ th, td { border: 1px solid var(--line); padding: .55rem .7rem; text-align: left;
 .card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1rem; }
 
 /* --- Checkout: banner de cookies tapa el CTA a mòbil (BUG INTENCIONAT) --- */
-.checkout-page { position: relative; min-height: 80vh; padding-bottom: 120px; }
+.checkout-page { position: relative; min-height: 80vh; padding-bottom: 8rem; }
 .cookie-banner {
   position: fixed;
   left: 0;
@@ -58,13 +58,26 @@ th, td { border: 1px solid var(--line); padding: .55rem .7rem; text-align: left;
   z-index: 50;
   background: #111827;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 1rem 1.25rem;
 }
 .cta-pay {
-  position: relative;
-  z-index: 1; /* més baix que el banner → a mòbil sembla clicable però queda tapat */
-  margin-top: 2rem;
+  /* A ~375px el CTA queda a la zona inferior; el banner (z-index més alt) el tapa i no es pot clicar */
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1.25rem;
+  z-index: 1;
+  width: auto;
+  margin-top: 0;
 }
 @media (min-width: 900px) {
   .cookie-banner { max-width: 420px; left: auto; right: 1rem; bottom: 1rem; border-radius: 10px; }
+  .cta-pay {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 2rem;
+  }
 }
